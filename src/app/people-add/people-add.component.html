@@ -1,0 +1,42 @@
+<div>
+  <h2>Adicionar Pessoa</h2>
+  <form (ngSubmit)="addPerson()" class="mat-elevation-z8" style="padding: 20px;">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input matInput [(ngModel)]="person.nome" name="nome" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Data de Nascimento</mat-label>
+      <input matInput [(ngModel)]="person.data_nasc" name="data_nasc" type="date" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>CPF</mat-label>
+      <input matInput [(ngModel)]="person.cpf" name="cpf" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Sexo</mat-label>
+      <mat-select [(ngModel)]="person.sexo" name="sexo" required>
+        <mat-option value="M">Masculino</mat-option>
+        <mat-option value="F">Feminino</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Altura</mat-label>
+      <input matInput [(ngModel)]="person.altura" name="altura" type="number" step="0.01" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Peso</mat-label>
+      <input matInput [(ngModel)]="person.peso" name="peso" type="number" step="0.1" required>
+    </mat-form-field>
+
+    <div style="text-align: left;">
+      <button mat-raised-button color="primary" type="submit">Adicionar</button>
+      <button mat-button color="warn" type="button" (click)="cancel()">Cancelar</button>
+    </div>
+  </form>
+</div>
